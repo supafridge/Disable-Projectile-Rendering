@@ -1,0 +1,27 @@
+{
+  "key.category.disable_projectile_rendering.main": "Disable Projectile Rendering",
+  "key.disable_projectile_rendering.toggle": "Toggle Projectile Rendering",
+  "key.disable_projectile_rendering.toggle_arrows": "Toggle Arrows",
+  "key.disable_projectile_rendering.toggle_thrown_items": "Toggle Thrown Items",
+  "key.disable_projectile_rendering.toggle_potions": "Toggle Potions",
+  "key.disable_projectile_rendering.toggle_fireballs": "Toggle Fireballs",
+  "key.disable_projectile_rendering.toggle_wind_charges": "Toggle Wind Charges",
+  "key.disable_projectile_rendering.toggle_mob_attacks": "Toggle Mob Attacks",
+  "key.disable_projectile_rendering.toggle_utility": "Toggle Utility",
+  "key.disable_projectile_rendering.toggle_other": "Toggle Other Projectiles",
+
+  "disable_projectile_rendering.status.enabled": "Enabled rendering of %s.",
+  "disable_projectile_rendering.status.disabled": "Disabled rendering of %s.",
+  "disable_projectile_rendering.status.enabled_overridden": "Enabled rendering of %s (overridden by master switch).",
+  "disable_projectile_rendering.status.disabled_overridden": "Disabled rendering of %s (overridden by master switch).",
+
+  "disable_projectile_rendering.category.all": "all projectiles",
+  "disable_projectile_rendering.category.arrows": "the \"Arrows\" projectile type",
+  "disable_projectile_rendering.category.thrown_items": "the \"Thrown Items\" projectile type",
+  "disable_projectile_rendering.category.potions": "the \"Potions\" projectile type",
+  "disable_projectile_rendering.category.fireballs": "the \"Fireballs\" projectile type",
+  "disable_projectile_rendering.category.wind_charges": "the \"Wind Charges\" projectile type",
+  "disable_projectile_rendering.category.mob_attacks": "the \"Mob Attacks\" projectile type",
+  "disable_projectile_rendering.category.utility": "the \"Utility\" projectile type",
+  "disable_projectile_rendering.category.other": "other projectiles"
+}

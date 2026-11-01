@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "disable_projectile_rendering",
+  "version": "${version}",
+  "name": "Disable Projectile Rendering",
+  "description": "Allows for granular control of projectile rendering for a big performance boost!",
+  "authors": ["fridge"],
+  "contact": {
+    "homepage": "https://modrinth.com/mod/disable-projectile-rendering",
+    "source": "https://github.com/supafridge/Disable-Projectile-Rendering",
+    "issues": "https://github.com/supafridge/Disable-Projectile-Rendering/issues"
+  },
+  "license": "MIT",
+  "icon": "assets/disable_projectile_rendering/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "gg.fridge.Disable_Projectile_Rendering.ModEntry"
+    ],
+    "sodium:config_api_user": [
+      "gg.fridge.Disable_Projectile_Rendering.Configuration.ModOptions"
+    ]
+  },
+  "mixins": [
+    "disable_projectile_rendering.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}",
+    "java": ">=25"
+  },
+  "suggests": {
+    "sodium": "*",
+    "reeses-sodium-options": "*"
+  }
+}
