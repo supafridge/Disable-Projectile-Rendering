@@ -15,7 +15,7 @@ import gg.fridge.Disable_Projectile_Rendering.ProjectileFilter;
 public class EntityRenderDispatcherMixin {
     @Inject(method = "shouldRender", at = @At("HEAD"), cancellable = true)
     private void DisableProjectileRendering$disableProjectileRendering(Entity entity, Frustum culler,
-                                                                       double camX, double camY, double camZ, float partialTicks,
+                                                                       double camX, double camY, double camZ,
                                                                        CallbackInfoReturnable<Boolean> callbackInfoReturnable) {
         if (ProjectileFilter.shouldHide(entity))
             callbackInfoReturnable.setReturnValue(false);

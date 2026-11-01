@@ -10,6 +10,15 @@
   "key.disable_projectile_rendering.toggle_utility": "Toggle Utility",
   "key.disable_projectile_rendering.toggle_other": "Toggle Other Projectiles",
 
+  "disable_projectile_rendering.configuration.title": "Projectile Rendering",
+  "disable_projectile_rendering.configuration.general": "General",
+  "disable_projectile_rendering.configuration.master_switch": "Hide All Projectiles",
+  "disable_projectile_rendering.configuration.master_switch.tooltip": "Master switch for projectile rendering. When on, all projectile rendering is disabled and the settings below are ignored.",
+  "disable_projectile_rendering.configuration.show_status_messages": "Show Status Messages",
+  "disable_projectile_rendering.configuration.show_status_messages.tooltip": "Shows status messages for projectile rendering on the actionbar.",
+  "disable_projectile_rendering.configuration.projectile_type": "Hide %s",
+  "disable_projectile_rendering.configuration.projectile_type.tooltip": "Disable rendering for this type of projectile.",
+
   "disable_projectile_rendering.status.enabled": "Enabled rendering of %s.",
   "disable_projectile_rendering.status.disabled": "Disabled rendering of %s.",
   "disable_projectile_rendering.status.enabled_overridden": "Enabled rendering of %s (overridden by master switch).",
@@ -23,5 +32,14 @@
   "disable_projectile_rendering.category.wind_charges": "the \"Wind Charges\" projectile type",
   "disable_projectile_rendering.category.mob_attacks": "the \"Mob Attacks\" projectile type",
   "disable_projectile_rendering.category.utility": "the \"Utility\" projectile type",
-  "disable_projectile_rendering.category.other": "other projectiles"
+  "disable_projectile_rendering.category.other": "other projectiles",
+
+  "disable_projectile_rendering.options.group.arrows": "Arrows",
+  "disable_projectile_rendering.options.group.thrown_items": "Thrown Items",
+  "disable_projectile_rendering.options.group.potions": "Potions",
+  "disable_projectile_rendering.options.group.fireballs": "Fireballs",
+  "disable_projectile_rendering.options.group.wind_charges": "Wind Charges",
+  "disable_projectile_rendering.options.group.mob_attacks": "Mob Attacks",
+  "disable_projectile_rendering.options.group.utility": "Utility",
+  "disable_projectile_rendering.options.group.other": "Other Projectiles"
 }

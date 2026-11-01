@@ -27,6 +27,7 @@ public final class ModConfiguration {
             .resolve("Disable_Projectile_Rendering.json");
 
     private static final String HIDE_ALL_KEY = "hide_all";
+    private static final String SHOW_STATUS_MESSAGES_KEY = "show_status_messages";
 
     private ModConfiguration() {}
 
@@ -44,6 +45,8 @@ public final class ModConfiguration {
 
             Boolean hideAll = saved.get(HIDE_ALL_KEY);
             if (hideAll != null) ProjectileFilter.hideAll = hideAll;
+            Boolean showStatusMessages = saved.get(SHOW_STATUS_MESSAGES_KEY);
+            if (showStatusMessages != null) ProjectileFilter.showStatusMessage = showStatusMessages;
 
             for (ProjectileType type : ProjectileType.values()) {
                 Boolean hide = saved.get(keyOf(type));
@@ -59,6 +62,7 @@ public final class ModConfiguration {
     public static void save() {
         Map<String, Boolean> output = new LinkedHashMap<>();
         output.put(HIDE_ALL_KEY, ProjectileFilter.hideAll);
+        output.put(SHOW_STATUS_MESSAGES_KEY, ProjectileFilter.showStatusMessage);
         for (ProjectileType type : ProjectileType.values()) {
             output.put(keyOf(type), ProjectileFilter.isHidden(type));
         }

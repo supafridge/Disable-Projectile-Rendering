@@ -38,6 +38,11 @@ public enum ProjectileCategory {
         return Component.translatable(translationKey());
     }
 
+    public Component groupTitle() {
+        return Component.translatable(
+                "disable_projectile_rendering.options.group." + name().toLowerCase(Locale.ROOT));
+    }
+
     /** Gets the translated name of the key mapping for the projectile category. */
     public String keyMappingName() {
         return "key.disable_projectile_rendering.toggle_" + name().toLowerCase(Locale.ROOT);

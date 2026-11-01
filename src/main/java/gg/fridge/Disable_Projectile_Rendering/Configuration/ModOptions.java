@@ -20,30 +20,36 @@ public class ModOptions implements ConfigEntryPoint {
     @Override
     public void registerConfigLate(ConfigBuilder builder) {
         var page = builder.createOptionPage()
-                .setName(Component.literal("Projectile Rendering"));
+                .setName(Component.translatable("disable_projectile_rendering.configuration.title"));
 
         // Master switch
         var general = builder.createOptionGroup()
-                .setName(Component.literal("General"));
-        general.addOption(builder.createBooleanOption(Identifier.parse(MOD_ID + ":enabled"))
-                .setName(Component.literal("Hide All Projectiles"))
-                .setTooltip(Component.literal("Master switch for projectile rendering. When on, all projectile rendering is disabled and the settings below are ignored."))
+                .setName(Component.translatable("disable_projectile_rendering.configuration.general"));
+        general.addOption(builder.createBooleanOption(Identifier.parse(MOD_ID + ":hide_all"))
+                .setName(Component.translatable("disable_projectile_rendering.configuration.master_switch"))
+                .setTooltip(Component.translatable("disable_projectile_rendering.configuration.master_switch.tooltip"))
                 .setStorageHandler(ModConfiguration::save)
                 .setBinding(v -> ProjectileFilter.hideAll = v, () -> ProjectileFilter.hideAll)
                 .setDefaultValue(ProjectileFilter.hideAll));
+        general.addOption(builder.createBooleanOption(Identifier.parse(MOD_ID + ":show_status_messages"))
+                .setName(Component.translatable("disable_projectile_rendering.configuration.show_status_messages"))
+                .setTooltip(Component.translatable("disable_projectile_rendering.configuration.show_status_messages.tooltip"))
+                .setStorageHandler(ModConfiguration::save)
+                .setBinding(v -> ProjectileFilter.showStatusMessage = v, () -> ProjectileFilter.showStatusMessage)
+                .setDefaultValue(true));
         page.addOptionGroup(general);
 
         // One group per section, one checkbox per projectile type
         for (ProjectileCategory category : ProjectileCategory.values()) {
             var group = builder.createOptionGroup()
-                    .setName(category.label());
+                    .setName(category.groupTitle());
 
             // Create a boolean option for each category type
             for (ProjectileType type : category.types()) {
                 group.addOption(builder.createBooleanOption(
                         Identifier.parse(MOD_ID + ":" + type.name().toLowerCase(Locale.ROOT)))
-                        .setName(Component.literal("Hide " + makePretty(type)))
-                        .setTooltip(Component.literal("Disable rendering for this type of projectile."))
+                        .setName(Component.translatable("disable_projectile_rendering.configuration.projectile_type", makePretty(type)))
+                        .setTooltip(Component.translatable("disable_projectile_rendering.configuration.projectile_type.tooltip"))
                         .setStorageHandler(ModConfiguration::save)
                         .setBinding(v -> ProjectileFilter.set(v, type), () -> ProjectileFilter.isHidden(type))
                         .setDefaultValue(ProjectileFilter.isHidden(type)));
@@ -51,7 +57,9 @@ public class ModOptions implements ConfigEntryPoint {
             page.addOptionGroup(group);
         }
 
-        builder.registerOwnModOptions().addPage(page);
+        builder.registerOwnModOptions()
+                .setIcon(Identifier.parse(MOD_ID + ":icon.png"))
+                .addPage(page);
     }
 
     /** Turns each projectile type into a better, human-legible name. */

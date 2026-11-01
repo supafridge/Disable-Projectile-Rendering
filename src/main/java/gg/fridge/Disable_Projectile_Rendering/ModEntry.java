@@ -47,7 +47,7 @@ public class ModEntry implements ClientModInitializer {
         // One toggle keybind per category, unbound by default
         for (ProjectileCategory projectileCategory : ProjectileCategory.values()) {
             CATEGORY_KEYS.put(projectileCategory, KeyMappingHelper.registerKeyMapping(
-                    new KeyMapping(projectileCategory.keyMappingName(), 0, category)));
+                    new KeyMapping(projectileCategory.keyMappingName(), InputConstants.UNKNOWN.getValue(), category)));
         }
 
         // Adds the master toggle keybind and keybind for each category
@@ -55,7 +55,7 @@ public class ModEntry implements ClientModInitializer {
             while (masterRenderingKeybind.consumeClick()) {
                 ProjectileFilter.hideAll = !ProjectileFilter.hideAll;
                 ModConfiguration.save();
-                showRenderingStatus(client, Component.translatable("disable_projectile_rendering.category.all"),
+                showRenderingStatusMessage(client, Component.translatable("disable_projectile_rendering.category.all"),
                         ProjectileFilter.hideAll, false);
             }
 
@@ -64,15 +64,15 @@ public class ModEntry implements ClientModInitializer {
                 while (entry.getValue().consumeClick()) {
                     boolean hidden = entry.getKey().toggle();
                     ModConfiguration.save();
-                    showRenderingStatus(client, entry.getKey().label(), hidden, true);
+                    showRenderingStatusMessage(client, entry.getKey().label(), hidden, true);
                 }
             }
         });
     }
 
     /** Shows a message on the player's actionbar. */
-    private static void showRenderingStatus(Minecraft client, Component label, boolean hidden, boolean isCategory) {
-        if (client.player == null) return;
+    private static void showRenderingStatusMessage(Minecraft client, Component label, boolean hidden, boolean isCategory) {
+        if (client.player == null || !ProjectileFilter.showStatusMessage) return;
 
         // Check if it's being overridden
         boolean overridden = isCategory && ProjectileFilter.hideAll;

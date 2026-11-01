@@ -12,28 +12,29 @@ import gg.fridge.Disable_Projectile_Rendering.Enums.ProjectileType;
 public final class ProjectileFilter {
     /** Master switch for projectile rendering */
     public static boolean hideAll = false;
+    public static boolean showStatusMessage = true;
 
     // true = hide, false = show
-    private static boolean hideArrow                = true;
-    private static boolean hideSpectralArrow        = true;
-    private static boolean hideTrident              = true;
-    private static boolean hideSnowball             = true;
-    private static boolean hideEgg                  = true;
-    private static boolean hideEnderPearl           = true;
-    private static boolean hideExperienceBottle     = true;
-    private static boolean hideSplashPotion         = true;
-    private static boolean hideLingeringPotion      = true;
-    private static boolean hideFireball             = true;
-    private static boolean hideSmallFireball        = true;
-    private static boolean hideWitherSkull          = true;
-    private static boolean hideDragonFireball       = true;
-    private static boolean hideWindCharge           = true;
-    private static boolean hideBreezeWindCharge     = true;
-    private static boolean hideShulkerBullet        = true;
-    private static boolean hideLlamaSpit            = true;
-    private static boolean hideFishingBobber        = true;
-    private static boolean hideFireworkRocket       = true;
-    private static boolean hideOther                = true;
+    private static boolean hideArrow                = false;
+    private static boolean hideSpectralArrow        = false;
+    private static boolean hideTrident              = false;
+    private static boolean hideSnowball             = false;
+    private static boolean hideEgg                  = false;
+    private static boolean hideEnderPearl           = false;
+    private static boolean hideExperienceBottle     = false;
+    private static boolean hideSplashPotion         = false;
+    private static boolean hideLingeringPotion      = false;
+    private static boolean hideFireball             = false;
+    private static boolean hideSmallFireball        = false;
+    private static boolean hideWitherSkull          = false;
+    private static boolean hideDragonFireball       = false;
+    private static boolean hideWindCharge           = false;
+    private static boolean hideBreezeWindCharge     = false;
+    private static boolean hideShulkerBullet        = false;
+    private static boolean hideLlamaSpit            = false;
+    private static boolean hideFishingBobber        = false;
+    private static boolean hideFireworkRocket       = false;
+    private static boolean hideOther                = false;
 
     private static final Map<EntityType<?>, String> ID_CACHE = new IdentityHashMap<>();
 
